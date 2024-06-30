@@ -1,0 +1,19 @@
+.form {
+  background-color: var(--btn-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.form label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.form input {
+  font-size: 1rem;
+  padding: 0.25rem;
+  margin-bottom: 0.5rem;
+}

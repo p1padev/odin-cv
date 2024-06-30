@@ -2,20 +2,20 @@ import { useState } from 'react';
 import '../styles/Accordion.css';
 import Panel from './Panel';
 
-export default function Accordion({ fields }) {
+export default function Accordion({ forms }) {
   const [openPanelId, setOpenPanelId] = useState(null);
-  const handlePanelClick = () => {};
 
   return (
     <div className="accordion">
-      {fields.map((field) => (
+      {forms.map((form) => (
         <Panel
-          title={field.title}
-          isOpen={openPanelId === field.id}
-          key={field.id}
-        >
-          <h3>Test</h3>
-        </Panel>
+          form={form}
+          isOpen={openPanelId === form.id}
+          key={form.id}
+          onClick={() => {
+            setOpenPanelId(openPanelId === form.id ? null : form.id);
+          }}
+        ></Panel>
       ))}
     </div>
   );

@@ -1,13 +1,20 @@
 import '../styles/Panel.css';
+import Form from './Form';
 
-export default function Panel({ title, isOpen, children }) {
+export default function Panel({ form, isOpen, onClick }) {
   return (
     <section className={'panel-container' + (isOpen ? ' active' : '')}>
-      <button className="panel-button">
-        {title}
+      <button onClick={onClick} className="panel-button">
+        {form.title}
         <span className="arrow">{isOpen ? '▲' : '▼'}</span>
       </button>
-      {isOpen && <div className="panel-inputs">{children}</div>}
+      {isOpen && (
+        <Form
+          title={form.title}
+          formData={form.state}
+          setFormData={form.handler}
+        ></Form>
+      )}
     </section>
   );
 }
