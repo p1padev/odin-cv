@@ -4,6 +4,10 @@
   flex: 1 0 auto;
 }
 
+.dashboard .spinner-container {
+  place-self: center;
+}
+
 @media screen and (max-width: 768px) {
   .dashboard {
     grid-template-columns: 1fr;

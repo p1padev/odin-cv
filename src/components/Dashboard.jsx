@@ -4,8 +4,10 @@ import '../styles/Dashboard.css';
 import Accordion from './Accordion';
 import { personalInputNames } from './PersonalInputs';
 import Preview from './Preview';
+import Spinner from './Spinner';
 
 export default function Dashboard() {
+  const [isEditing, setIsEditing] = useState(false);
   const [personalInfo, setPersonalInfo] = useState({
     ...createEmptyState(personalInputNames),
   });
@@ -34,8 +36,12 @@ export default function Dashboard() {
 
   return (
     <div className="dashboard">
-      <Accordion forms={availableForms}></Accordion>
-      <Preview></Preview>
+      <Accordion
+        forms={availableForms}
+        setEditing={setIsEditing}
+        isEditing={isEditing}
+      ></Accordion>
+      {isEditing ? <Spinner></Spinner> : <Preview></Preview>}
     </div>
   );
 }

@@ -5,7 +5,12 @@ const inputComponentTable = {
   Personal: PersonalInputs,
 };
 
-export default function Form({ title, formData, setFormData }) {
+export default function Form({
+  title,
+  formData,
+  setFormData,
+  editing: [isEditing, setIsEditing],
+}) {
   const InputComponent = inputComponentTable[title] || null;
   const handleChange = (e) => {
     setFormData((prev) => {
@@ -17,13 +22,26 @@ export default function Form({ title, formData, setFormData }) {
   };
 
   return (
-    <form className="form">
+    <form
+      className="form"
+      onSubmit={(e) => {
+        e.preventDefault();
+        setIsEditing(false);
+      }}
+    >
       {InputComponent !== null && (
         <InputComponent
           handleChange={handleChange}
           formData={formData}
+          disabled={!isEditing}
         ></InputComponent>
       )}
+      <div className="form-controls">
+        <button type="submit">Save</button>
+        <button type="button" onClick={() => setIsEditing(true)}>
+          Edit
+        </button>
+      </div>
     </form>
   );
 }

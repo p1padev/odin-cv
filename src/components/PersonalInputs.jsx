@@ -1,9 +1,9 @@
 export const personalInputNames = ['fullName', 'email', 'phone'];
 
-export default function PersonalInputs({ formData, handleChange }) {
+export default function PersonalInputs({ formData, handleChange, disabled }) {
   return (
     <>
-      <label for="fullName">Full Name</label>
+      <label htmlFor="fullName">Full Name</label>
       <input
         value={formData.fullName}
         id="fullName"
@@ -14,8 +14,9 @@ export default function PersonalInputs({ formData, handleChange }) {
         min="6"
         max="12"
         onChange={handleChange}
+        disabled={disabled}
       ></input>
-      <label for="email">Email</label>
+      <label htmlFor="email">Email</label>
       <input
         value={formData.email}
         id="email"
@@ -24,8 +25,9 @@ export default function PersonalInputs({ formData, handleChange }) {
         required
         type="email"
         onChange={handleChange}
+        disabled={disabled}
       ></input>
-      <label for="phone">Phone</label>
+      <label htmlFor="phone">Phone</label>
       <input
         value={formData.phone}
         id="phone"
@@ -34,6 +36,7 @@ export default function PersonalInputs({ formData, handleChange }) {
         required
         type="tel"
         onChange={handleChange}
+        disabled={disabled}
       ></input>
     </>
   );

@@ -17,3 +17,11 @@
   padding: 0.25rem;
   margin-bottom: 0.5rem;
 }
+
+.form-controls {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
