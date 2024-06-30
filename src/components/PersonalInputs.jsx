@@ -1,5 +1,3 @@
-export const personalInputNames = ['fullName', 'email', 'phone'];
-
 export default function PersonalInputs({ formData, handleChange, disabled }) {
   return (
     <>

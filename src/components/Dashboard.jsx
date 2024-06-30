@@ -1,15 +1,15 @@
 import { useState } from 'react';
-import createEmptyState from '../formHelper';
 import '../styles/Dashboard.css';
 import Accordion from './Accordion';
-import { personalInputNames } from './PersonalInputs';
 import Preview from './Preview';
 import Spinner from './Spinner';
 
 export default function Dashboard() {
   const [isEditing, setIsEditing] = useState(false);
   const [personalInfo, setPersonalInfo] = useState({
-    ...createEmptyState(personalInputNames),
+    fullName: 'John Doe',
+    email: 'john@doe.com',
+    phone: '+55(99)999999999',
   });
   const [workInfo, setWorkInfo] = useState({});
   const [educationInfo, setEducationInfo] = useState({});

@@ -10,7 +10,7 @@ export default function Form({
   formData,
   setFormData,
   editing: [isEditing, setIsEditing],
-  children,
+  error: [errorMessage, setErrorMessage],
 }) {
   const InputComponent = inputComponentTable[title] || null;
   const handleChange = (e) => {
@@ -28,6 +28,7 @@ export default function Form({
       onSubmit={(e) => {
         e.preventDefault();
         setIsEditing(false);
+        setErrorMessage('');
       }}
     >
       {InputComponent !== null && (
@@ -38,12 +39,18 @@ export default function Form({
         ></InputComponent>
       )}
       <div className="form-controls">
-        <button type="submit">Save</button>
-        <button type="button" onClick={() => setIsEditing(true)}>
+        <button type="submit" disabled={!isEditing}>
+          Save
+        </button>
+        <button
+          type="button"
+          disabled={isEditing}
+          onClick={() => setIsEditing(true)}
+        >
           Edit
         </button>
       </div>
-      {children}
+      {errorMessage && <p className="error-message">{errorMessage}</p>}
     </form>
   );
 }

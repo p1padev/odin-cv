@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import '../styles/Accordion.css';
+import ClearFormButton from './ClearFormButton';
 import Panel from './Panel';
 
 export default function Accordion({ forms, isEditing, setEditing }) {
@@ -8,6 +9,7 @@ export default function Accordion({ forms, isEditing, setEditing }) {
 
   return (
     <div className="accordion">
+      <ClearFormButton forms={forms}></ClearFormButton>
       {forms.map((form) => (
         <Panel
           form={form}
@@ -23,7 +25,6 @@ export default function Accordion({ forms, isEditing, setEditing }) {
             const isToggle = openPanelId === form.id;
             setErrorMessage('');
             setOpenPanelId(isToggle ? null : form.id);
-            setEditing(isToggle ? false : true);
           }}
         ></Panel>
       ))}
