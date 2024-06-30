@@ -10,6 +10,7 @@ export default function Form({
   formData,
   setFormData,
   editing: [isEditing, setIsEditing],
+  children,
 }) {
   const InputComponent = inputComponentTable[title] || null;
   const handleChange = (e) => {
@@ -42,6 +43,7 @@ export default function Form({
           Edit
         </button>
       </div>
+      {children}
     </form>
   );
 }
