@@ -1,3 +1,9 @@
+export const personalInputsDefault = {
+  fullName: 'John Doe',
+  email: 'john@doe.com',
+  phone: '+55(99)99999',
+};
+
 export default function PersonalInputs({ formData, handleChange, disabled }) {
   return (
     <>

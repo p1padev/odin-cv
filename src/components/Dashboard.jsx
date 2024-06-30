@@ -1,15 +1,14 @@
 import { useState } from 'react';
 import '../styles/Dashboard.css';
 import Accordion from './Accordion';
+import { personalInputsDefault } from './PersonalInputs';
 import Preview from './Preview';
 import Spinner from './Spinner';
 
 export default function Dashboard() {
   const [isEditing, setIsEditing] = useState(false);
   const [personalInfo, setPersonalInfo] = useState({
-    fullName: 'John Doe',
-    email: 'john@doe.com',
-    phone: '+55(99)999999999',
+    ...personalInputsDefault,
   });
   const [workInfo, setWorkInfo] = useState({});
   const [educationInfo, setEducationInfo] = useState({});
