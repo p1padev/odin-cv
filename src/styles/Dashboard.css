@@ -1,0 +1,12 @@
+.dashboard {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  flex: 1 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+}
