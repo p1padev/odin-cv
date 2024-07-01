@@ -12,7 +12,7 @@ export default function Dashboard() {
     ...personalInputsDefault,
   });
   const [educationInfo, setEducationInfo] = useState([EducationInputsDefault]);
-  const [workInfo, setWorkInfo] = useState();
+  const [workInfo, setWorkInfo] = useState([]);
   const availableForms = [
     {
       title: 'Personal',
@@ -38,7 +38,7 @@ export default function Dashboard() {
     <div className="dashboard">
       <Accordion
         forms={availableForms}
-        editing={[isEditing, setIsEditing]}
+        editingState={[isEditing, setIsEditing]}
       ></Accordion>
       {isEditing ? <Spinner></Spinner> : <Preview></Preview>}
     </div>

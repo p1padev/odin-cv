@@ -3,16 +3,17 @@
   background-color: var(--btn-color);
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
 
 .form {
   padding: 1rem;
   overflow-y: auto;
+  max-height: 50vh;
 }
 
 .form fieldset {
   border: 0;
+  justify-content: center;
 }
 
 .form label {
@@ -34,10 +35,28 @@
   gap: 20px;
 }
 
-.form-btn_add {
+.form-fieldset_add {
   width: 32px;
   height: 32px;
   padding: 0;
   margin-left: auto;
   margin-bottom: 1rem;
+  flex-shrink: 0;
+}
+
+.form .fieldset-container {
+  background-color: rgb(230, 230, 230);
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 6px;
+}
+
+.form fieldset {
+  background-color: transparent;
+}
+
+.form-fieldset_remove {
+  border-top: 1px solid hotpink;
 }

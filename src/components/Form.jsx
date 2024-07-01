@@ -15,20 +15,19 @@ export default function Form({
   errorState: [errorMessage, setErrorMessage],
 }) {
   const InputComponent = inputComponentTable[title] || null;
+  const onSubmitFormHandler = (e) => {
+    e.preventDefault();
+    setIsEditing(false);
+    setErrorMessage('');
+  };
 
   return (
-    <form
-      className="form"
-      onSubmit={(e) => {
-        e.preventDefault();
-        setIsEditing(false);
-        setErrorMessage('');
-      }}
-    >
+    <form className="form" onSubmit={onSubmitFormHandler}>
       {InputComponent !== null && (
         <InputComponent
           formState={formState}
           disabled={!isEditing}
+          setErrorMessage={setErrorMessage}
         ></InputComponent>
       )}
       <FormControls

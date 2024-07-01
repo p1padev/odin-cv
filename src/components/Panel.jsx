@@ -1,7 +1,13 @@
 import '../styles/Panel.css';
 import Form from './Form';
 
-export default function Panel({ form, isOpen, onClick, editing, error }) {
+export default function Panel({
+  form,
+  isOpen,
+  onClick,
+  editingState,
+  errorState,
+}) {
   return (
     <section className={'panel-container' + (isOpen ? ' active' : '')}>
       <button onClick={onClick} className="panel-button">
@@ -12,8 +18,8 @@ export default function Panel({ form, isOpen, onClick, editing, error }) {
         <Form
           title={form.title}
           formState={[form.state, form.handler]}
-          editingState={editing}
-          errorState={error}
+          editingState={editingState}
+          errorState={errorState}
         ></Form>
       )}
     </section>
