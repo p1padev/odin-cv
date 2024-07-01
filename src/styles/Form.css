@@ -1,10 +1,18 @@
-.form {
+.form,
+.form fieldset {
   background-color: var(--btn-color);
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.form {
   padding: 1rem;
   overflow-y: auto;
+}
+
+.form fieldset {
+  border: 0;
 }
 
 .form label {
@@ -24,4 +32,12 @@
   justify-content: center;
   align-items: center;
   gap: 20px;
+}
+
+.form-btn_add {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  margin-left: auto;
+  margin-bottom: 1rem;
 }

@@ -6,6 +6,7 @@ import Panel from './Panel';
 export default function Accordion({ forms, editing }) {
   const [openPanelId, setOpenPanelId] = useState(null);
   const [errorMessage, setErrorMessage] = useState('');
+  const [isEditing] = editing;
 
   return (
     <div className="accordion">
@@ -18,7 +19,7 @@ export default function Accordion({ forms, editing }) {
           editing={editing}
           error={[errorMessage, setErrorMessage]}
           onClick={() => {
-            if (editing.isEditing) {
+            if (isEditing) {
               setErrorMessage('Please save the form before closing it.');
               return;
             }

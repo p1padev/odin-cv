@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import '../styles/Dashboard.css';
 import Accordion from './Accordion';
+import { EducationInputsDefault } from './EducationInputs';
 import { personalInputsDefault } from './PersonalInputs';
 import Preview from './Preview';
 import Spinner from './Spinner';
@@ -10,8 +11,8 @@ export default function Dashboard() {
   const [personalInfo, setPersonalInfo] = useState({
     ...personalInputsDefault,
   });
-  const [workInfo, setWorkInfo] = useState({});
-  const [educationInfo, setEducationInfo] = useState({});
+  const [educationInfo, setEducationInfo] = useState([EducationInputsDefault]);
+  const [workInfo, setWorkInfo] = useState();
   const availableForms = [
     {
       title: 'Personal',

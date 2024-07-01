@@ -17,7 +17,7 @@ export default function PersonalInputs({
     });
   };
   return (
-    <>
+    <fieldset disabled={disabled}>
       <label htmlFor="fullName">Full Name</label>
       <input
         value={formData.fullName}
@@ -29,7 +29,6 @@ export default function PersonalInputs({
         min="6"
         max="12"
         onChange={handleChange}
-        disabled={disabled}
       ></input>
       <label htmlFor="email">Email</label>
       <input
@@ -40,7 +39,6 @@ export default function PersonalInputs({
         required
         type="email"
         onChange={handleChange}
-        disabled={disabled}
       ></input>
       <label htmlFor="phone">Phone</label>
       <input
@@ -51,8 +49,7 @@ export default function PersonalInputs({
         required
         type="tel"
         onChange={handleChange}
-        disabled={disabled}
       ></input>
-    </>
+    </fieldset>
   );
 }
