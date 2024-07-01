@@ -11,10 +11,9 @@ export default function Panel({ form, isOpen, onClick, editing, error }) {
       {isOpen && (
         <Form
           title={form.title}
-          formData={form.state}
-          setFormData={form.handler}
-          editing={editing}
-          error={error}
+          formState={[form.state, form.handler]}
+          editingState={editing}
+          errorState={error}
         ></Form>
       )}
     </section>

@@ -3,7 +3,7 @@ import '../styles/Accordion.css';
 import ClearFormButton from './ClearFormButton';
 import Panel from './Panel';
 
-export default function Accordion({ forms, isEditing, setEditing }) {
+export default function Accordion({ forms, editing }) {
   const [openPanelId, setOpenPanelId] = useState(null);
   const [errorMessage, setErrorMessage] = useState('');
 
@@ -15,10 +15,10 @@ export default function Accordion({ forms, isEditing, setEditing }) {
           form={form}
           isOpen={openPanelId === form.id}
           key={form.id}
-          editing={[isEditing, setEditing]}
+          editing={editing}
           error={[errorMessage, setErrorMessage]}
           onClick={() => {
-            if (isEditing) {
+            if (editing.isEditing) {
               setErrorMessage('Please save the form before closing it.');
               return;
             }

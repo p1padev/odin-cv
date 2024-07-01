@@ -1,26 +1,20 @@
 import '../styles/Form.css';
+import EducationInputs from './EducationInputs';
+import FormControls from './FormControls';
 import PersonalInputs from './PersonalInputs';
 
 const inputComponentTable = {
   Personal: PersonalInputs,
+  Education: EducationInputs,
 };
 
 export default function Form({
   title,
-  formData,
-  setFormData,
-  editing: [isEditing, setIsEditing],
-  error: [errorMessage, setErrorMessage],
+  formState,
+  editingState: [isEditing, setIsEditing],
+  errorState: [errorMessage, setErrorMessage],
 }) {
   const InputComponent = inputComponentTable[title] || null;
-  const handleChange = (e) => {
-    setFormData((prev) => {
-      return {
-        ...prev,
-        [e.target.name]: e.target.value,
-      };
-    });
-  };
 
   return (
     <form
@@ -33,24 +27,15 @@ export default function Form({
     >
       {InputComponent !== null && (
         <InputComponent
-          handleChange={handleChange}
-          formData={formData}
+          formState={formState}
           disabled={!isEditing}
         ></InputComponent>
       )}
-      <div className="form-controls">
-        <button type="submit" disabled={!isEditing}>
-          Save
-        </button>
-        <button
-          type="button"
-          disabled={isEditing}
-          onClick={() => setIsEditing(true)}
-        >
-          Edit
-        </button>
-      </div>
-      {errorMessage && <p className="error-message">{errorMessage}</p>}
+      <FormControls
+        isEditing={isEditing}
+        setIsEditing={setIsEditing}
+        errorMessage={errorMessage}
+      ></FormControls>
     </form>
   );
 }

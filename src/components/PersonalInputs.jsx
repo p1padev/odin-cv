@@ -4,7 +4,18 @@ export const personalInputsDefault = {
   phone: '+55(99)99999',
 };
 
-export default function PersonalInputs({ formData, handleChange, disabled }) {
+export default function PersonalInputs({
+  formState: [formData, setFormData],
+  disabled,
+}) {
+  const handleChange = (e) => {
+    setFormData((prev) => {
+      return {
+        ...prev,
+        [e.target.name]: e.target.value,
+      };
+    });
+  };
   return (
     <>
       <label htmlFor="fullName">Full Name</label>

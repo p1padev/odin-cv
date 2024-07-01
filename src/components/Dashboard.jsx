@@ -20,15 +20,15 @@ export default function Dashboard() {
       id: 0,
     },
     {
-      title: 'Work',
-      state: workInfo,
-      handler: setWorkInfo,
-      id: 1,
-    },
-    {
       title: 'Education',
       state: educationInfo,
       handler: setEducationInfo,
+      id: 1,
+    },
+    {
+      title: 'Work',
+      state: workInfo,
+      handler: setWorkInfo,
       id: 2,
     },
   ];
@@ -37,8 +37,7 @@ export default function Dashboard() {
     <div className="dashboard">
       <Accordion
         forms={availableForms}
-        setEditing={setIsEditing}
-        isEditing={isEditing}
+        editing={[isEditing, setIsEditing]}
       ></Accordion>
       {isEditing ? <Spinner></Spinner> : <Preview></Preview>}
     </div>
