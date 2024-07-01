@@ -2,10 +2,12 @@ import '../styles/Form.css';
 import EducationInputs from './EducationInputs';
 import FormControls from './FormControls';
 import PersonalInputs from './PersonalInputs';
+import WorkInputs from './WorkInputs';
 
 const inputComponentTable = {
   Personal: PersonalInputs,
   Education: EducationInputs,
+  Work: WorkInputs,
 };
 
 export default function Form({

@@ -8,7 +8,6 @@ export default function CreateInputsButton({ boilerplate, setFormData }) {
     setFormData((formData) => [...formData, newBoiler]);
     setId((id) => (id += 1));
   };
-  console.log(id);
 
   return (
     <button

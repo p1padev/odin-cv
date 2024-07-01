@@ -4,3 +4,9 @@
   flex-flow: column nowrap;
   min-height: 100vh;
 }
+
+@media (max-width: 768px) {
+  #root {
+    padding: 1rem;
+  }
+}

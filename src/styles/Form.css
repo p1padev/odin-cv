@@ -8,7 +8,7 @@
 .form {
   padding: 1rem;
   overflow-y: auto;
-  max-height: 50vh;
+  max-height: 60vh;
 }
 
 .form fieldset {
@@ -55,8 +55,15 @@
 
 .form fieldset {
   background-color: transparent;
+  padding: 0.25rem;
 }
 
 .form-fieldset_remove {
   border-top: 1px solid hotpink;
+}
+
+@media (max-width: 768px) {
+  .form {
+    padding: 0.5rem;
+  }
 }

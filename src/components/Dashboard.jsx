@@ -1,18 +1,19 @@
 import { useState } from 'react';
 import '../styles/Dashboard.css';
 import Accordion from './Accordion';
-import { EducationInputsDefault } from './EducationInputs';
+import { educationInputsDefault } from './EducationInputs';
 import { personalInputsDefault } from './PersonalInputs';
 import Preview from './Preview';
 import Spinner from './Spinner';
+import { workInputsDefault } from './WorkInputs';
 
 export default function Dashboard() {
   const [isEditing, setIsEditing] = useState(false);
   const [personalInfo, setPersonalInfo] = useState({
     ...personalInputsDefault,
   });
-  const [educationInfo, setEducationInfo] = useState([EducationInputsDefault]);
-  const [workInfo, setWorkInfo] = useState([]);
+  const [educationInfo, setEducationInfo] = useState([educationInputsDefault]);
+  const [workInfo, setWorkInfo] = useState([workInputsDefault]);
   const availableForms = [
     {
       title: 'Personal',
@@ -40,7 +41,15 @@ export default function Dashboard() {
         forms={availableForms}
         editingState={[isEditing, setIsEditing]}
       ></Accordion>
-      {isEditing ? <Spinner></Spinner> : <Preview></Preview>}
+      {isEditing ? (
+        <Spinner></Spinner>
+      ) : (
+        <Preview
+          personalInfo={personalInfo}
+          workInfo={workInfo}
+          educationInfo={educationInfo}
+        ></Preview>
+      )}
     </div>
   );
 }

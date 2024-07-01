@@ -1,11 +1,11 @@
 import CreateInputsButton from './CreateInputsButton';
 import Fieldset from './Fieldset';
 import RemoveFieldButton from './RemoveFieldButton';
-export const EducationInputsDefault = {
+export const educationInputsDefault = {
   schoolName: 'UFSC',
   courseTitle: 'Bachelor in Computer Science',
-  yearStart: '2016',
-  yearEnd: '2020',
+  yearStart: '2016-06',
+  yearEnd: '2020-06',
   id: 0,
 };
 
@@ -31,7 +31,7 @@ export default function EducationInputs({
   return (
     <>
       <CreateInputsButton
-        boilerplate={EducationInputsDefault}
+        boilerplate={educationInputsDefault}
         setFormData={setFormData}
       ></CreateInputsButton>
       {formData.map((educationField) => {
@@ -53,7 +53,41 @@ export default function EducationInputs({
                 required
                 type="text"
                 min="0"
-                max="12"
+                onChange={(e) => handleInputChange(e, educationField.id)}
+              ></input>
+              <label htmlFor={`courseTitle-` + educationField.id}>
+                Course Title
+              </label>
+              <input
+                value={educationField.courseTitle}
+                id={`courseTitle-` + educationField.id}
+                name="courseTitle"
+                placeholder="B. Computer Science"
+                required
+                type="text"
+                min="0"
+                onChange={(e) => handleInputChange(e, educationField.id)}
+              ></input>
+              <label htmlFor={`yearStart-` + educationField.id}>
+                Month/Year Started
+              </label>
+              <input
+                value={educationField.yearStart}
+                id={`yearStart-` + educationField.id}
+                name="yearStart"
+                required
+                type="month"
+                onChange={(e) => handleInputChange(e, educationField.id)}
+              ></input>
+              <label htmlFor={`yearEnd-` + educationField.id}>
+                Month/Year Ended
+              </label>
+              <input
+                value={educationField.yearEnd}
+                id={`yearEnd-` + educationField.id}
+                name="yearEnd"
+                required
+                type="month"
                 onChange={(e) => handleInputChange(e, educationField.id)}
               ></input>
             </Fieldset>

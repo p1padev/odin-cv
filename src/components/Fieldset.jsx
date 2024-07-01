@@ -11,9 +11,7 @@ export default function Fieldset({
       );
     }
   };
-  if (!disabled) {
-    setErrorMessage('');
-  }
+
   return (
     <fieldset
       className={className}

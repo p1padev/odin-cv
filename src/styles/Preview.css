@@ -1,3 +1,57 @@
 .preview {
   background-color: rgb(240, 240, 240);
+  display: grid;
+  grid-template-columns: 25px 1fr 25px;
+}
+
+.preview-sheet {
+  margin: 25px 0 0;
+  grid-column: 2/2;
+  background-color: white;
+  border: 1px solid black;
+}
+
+.preview-header {
+  background-color: steelblue;
+  color: white;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 1rem;
+}
+
+.preview-name {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.preview-contact {
+  margin-left: auto;
+}
+
+.preview-contact h2 {
+  font-size: 1rem;
+  margin: 0.25rem 0;
+}
+
+.preview-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.preview-header a {
+  color: white;
+  transition: color 200ms ease;
+}
+
+.preview-header a:hover {
+  color: black;
+}
+
+.fw-600 {
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
