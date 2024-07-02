@@ -6,7 +6,7 @@ export default function Panel({
   isOpen,
   onClick,
   editingState,
-  errorState,
+  setErrorMessage,
 }) {
   return (
     <section className={'panel-container' + (isOpen ? ' active' : '')}>
@@ -19,7 +19,7 @@ export default function Panel({
           title={form.title}
           formState={[form.state, form.handler]}
           editingState={editingState}
-          errorState={errorState}
+          setErrorMessage={setErrorMessage}
         ></Form>
       )}
     </section>

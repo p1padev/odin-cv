@@ -12,7 +12,6 @@ export const educationInputsDefault = {
 export default function EducationInputs({
   formState: [formData, setFormData],
   disabled,
-  setErrorMessage,
 }) {
   const handleInputChange = (e, fieldId) => {
     setFormData(
@@ -30,18 +29,10 @@ export default function EducationInputs({
   };
   return (
     <>
-      <CreateInputsButton
-        boilerplate={educationInputsDefault}
-        setFormData={setFormData}
-      ></CreateInputsButton>
       {formData.map((educationField) => {
         return (
           <div className="fieldset-container" key={educationField.id}>
-            <Fieldset
-              className="form-education_fieldset"
-              disabled={disabled}
-              setErrorMessage={setErrorMessage}
-            >
+            <Fieldset className="form-education_fieldset" disabled={disabled}>
               <label htmlFor={`courseTitle-` + educationField.id}>
                 Course Title
               </label>
@@ -98,6 +89,10 @@ export default function EducationInputs({
           </div>
         );
       })}
+      <CreateInputsButton
+        boilerplate={educationInputsDefault}
+        setFormData={setFormData}
+      ></CreateInputsButton>
     </>
   );
 }

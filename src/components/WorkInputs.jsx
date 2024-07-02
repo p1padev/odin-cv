@@ -4,7 +4,7 @@ import RemoveFieldButton from './RemoveFieldButton';
 export const workInputsDefault = {
   companyName: 'Odin',
   positionTitle: 'Developer',
-  description: 'I built nice projects there',
+  description: 'I worked on some great projects there',
   yearStart: '2016-06',
   yearEnd: '2020-06',
   id: 0,
@@ -31,10 +31,6 @@ export default function WorkInputs({
   };
   return (
     <>
-      <CreateInputsButton
-        boilerplate={workInputsDefault}
-        setFormData={setFormData}
-      ></CreateInputsButton>
       {formData.map((workField) => {
         return (
           <div className="fieldset-container" key={workField.id}>
@@ -109,6 +105,10 @@ export default function WorkInputs({
           </div>
         );
       })}
+      <CreateInputsButton
+        boilerplate={workInputsDefault}
+        setFormData={setFormData}
+      ></CreateInputsButton>
     </>
   );
 }

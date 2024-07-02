@@ -3,9 +3,8 @@ import '../styles/Accordion.css';
 import ClearFormButton from './ClearFormButton';
 import Panel from './Panel';
 
-export default function Accordion({ forms, editingState }) {
+export default function Accordion({ forms, editingState, setErrorMessage }) {
   const [openPanelId, setOpenPanelId] = useState(null);
-  const [errorMessage, setErrorMessage] = useState('');
   const [isEditing] = editingState;
   const handlePanelClick = (form) => {
     if (isEditing) {
@@ -26,8 +25,8 @@ export default function Accordion({ forms, editingState }) {
           isOpen={openPanelId === form.id}
           key={form.id}
           editingState={editingState}
-          errorState={[errorMessage, setErrorMessage]}
           onClick={() => handlePanelClick(form)}
+          setErrorMessage={setErrorMessage}
         ></Panel>
       ))}
     </div>

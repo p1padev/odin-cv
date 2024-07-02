@@ -2,7 +2,6 @@
   background-color: rgb(240, 240, 240);
   display: grid;
   grid-template-columns: 25px 1fr 25px;
-  overflow: auto;
 }
 
 .preview-sheet {
@@ -10,6 +9,8 @@
   grid-column: 2/2;
   background-color: white;
   border: 1px solid black;
+  overflow-y: auto;
+  max-height: 85vh;
 }
 
 .preview-header {
@@ -75,28 +76,38 @@
   padding: 0.75rem 0;
 }
 
-.preview-education_course,
-.preview-education_school,
-.preview-education_year {
+.preview-field_title,
+.preview-field_subtitle,
+.preview-field_date {
   margin: 0;
 }
 
-.preview-education_course {
+.preview-field_title {
   font-size: 1.1rem;
 }
 
-.preview-education_school {
+.preview-field_subtitle {
   font-weight: 600;
   font-size: 0.9rem;
 }
 
-.preview-education_date {
+.preview-field_date {
   font-size: 0.7rem;
   margin: 0;
 }
 
-.preview-education_year {
+.preview-field_year {
   font-style: italic;
   font-size: 1rem;
   vertical-align: middle;
+}
+
+.preview-work_description-title {
+  margin: 15px 0 0;
+  font-size: 1rem;
+}
+
+.preview-work_description-text {
+  margin: 10px 0 0;
+  padding: 0 0.5rem;
 }

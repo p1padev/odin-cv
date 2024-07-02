@@ -13,8 +13,8 @@ const inputComponentTable = {
 export default function Form({
   title,
   formState,
+  setErrorMessage,
   editingState: [isEditing, setIsEditing],
-  errorState: [errorMessage, setErrorMessage],
 }) {
   const InputComponent = inputComponentTable[title] || null;
   const onSubmitFormHandler = (e) => {
@@ -25,18 +25,16 @@ export default function Form({
 
   return (
     <form className="form" onSubmit={onSubmitFormHandler}>
+      <FormControls
+        isEditing={isEditing}
+        setIsEditing={setIsEditing}
+      ></FormControls>
       {InputComponent !== null && (
         <InputComponent
           formState={formState}
           disabled={!isEditing}
-          setErrorMessage={setErrorMessage}
         ></InputComponent>
       )}
-      <FormControls
-        isEditing={isEditing}
-        setIsEditing={setIsEditing}
-        errorMessage={errorMessage}
-      ></FormControls>
     </form>
   );
 }

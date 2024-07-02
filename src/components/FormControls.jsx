@@ -1,8 +1,4 @@
-export default function FormControls({
-  isEditing,
-  setIsEditing,
-  errorMessage,
-}) {
+export default function FormControls({ isEditing, setIsEditing }) {
   return (
     <div className="form-controls">
       <button type="submit" disabled={!isEditing}>
@@ -15,7 +11,6 @@ export default function FormControls({
       >
         Edit
       </button>
-      {errorMessage && <p className="error-message">{errorMessage}</p>}
     </div>
   );
 }

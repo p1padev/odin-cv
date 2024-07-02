@@ -8,13 +8,21 @@ export default function PreviewEducation({ educationInfo }) {
           key={field.id}
         >
           <div>
-            <h3 className="preview-education_course">{field.courseTitle}</h3>
-            <h4 className="preview-education_school">{field.schoolName}</h4>
+            <h3 className="preview-education_course preview-field_title">
+              {field.courseTitle}
+            </h3>
+            <h4 className="preview-education_school preview-field_subtitle">
+              {field.schoolName}
+            </h4>
           </div>
-          <p className="preview-education_date">
-            <span className="preview-education_year">{field.yearStart}</span>{' '}
+          <p className="preview-education_date preview-field_date">
+            <span className="preview-education_year preview-field_year">
+              {field.yearStart}
+            </span>{' '}
             <br></br>
-            <span className="preview-education_year">{field.yearEnd}</span>{' '}
+            <span className="preview-education_year preview-field_year">
+              {field.yearEnd}
+            </span>{' '}
           </p>
         </article>
       ))}

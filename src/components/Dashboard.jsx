@@ -8,6 +8,7 @@ import Spinner from './Spinner';
 import { workInputsDefault } from './WorkInputs';
 
 export default function Dashboard() {
+  const [errorMessage, setErrorMessage] = useState('');
   const [isEditing, setIsEditing] = useState(false);
   const [personalInfo, setPersonalInfo] = useState({
     ...personalInputsDefault,
@@ -40,9 +41,10 @@ export default function Dashboard() {
       <Accordion
         forms={availableForms}
         editingState={[isEditing, setIsEditing]}
+        setErrorMessage={setErrorMessage}
       ></Accordion>
       {isEditing ? (
-        <Spinner></Spinner>
+        <Spinner errorMessage={errorMessage}></Spinner>
       ) : (
         <Preview
           personalInfo={personalInfo}
