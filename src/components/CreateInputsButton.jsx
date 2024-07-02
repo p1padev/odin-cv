@@ -6,7 +6,7 @@ export default function CreateInputsButton({
   setFormData,
   setIsEditing,
 }) {
-  const [id, setId] = useState(1);
+  const [id, setId] = useState(1); //Boilerplate already uses 0
   const handleCreateInputsButton = () => {
     const newBoiler = createBoilerplateInput(boilerplate, id);
     setFormData((formData) => [...formData, newBoiler]);
