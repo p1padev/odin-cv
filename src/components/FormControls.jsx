@@ -1,4 +1,4 @@
-export default function FormControls({ isEditing, setIsEditing }) {
+export default function FormControls({ isEditing, setIsEditing, emptyState }) {
   return (
     <div className="form-controls">
       <button type="submit" disabled={!isEditing}>
@@ -6,7 +6,7 @@ export default function FormControls({ isEditing, setIsEditing }) {
       </button>
       <button
         type="button"
-        disabled={isEditing}
+        disabled={isEditing || emptyState}
         onClick={() => setIsEditing(true)}
       >
         Edit

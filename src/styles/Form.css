@@ -8,7 +8,7 @@
 .form {
   padding: 1rem;
   overflow-y: auto;
-  max-height: 60vh;
+  max-height: 75vh;
 }
 
 .form fieldset {
@@ -37,10 +37,7 @@
 }
 
 .form-fieldset_add {
-  width: 32px;
-  height: 32px;
-  padding: 0;
-  margin-left: auto;
+  padding: 0.5rem 0;
   margin-bottom: 1rem;
   flex-shrink: 0;
 }

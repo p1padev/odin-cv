@@ -1,11 +1,11 @@
 .accordion {
   background-color: rgb(200, 200, 200);
   border-radius: 8px 0 0 8px;
-  padding: 2rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
+  gap: 15px;
 }
 
 @media (max-width: 768px) {

@@ -13,6 +13,16 @@
   max-height: 85vh;
 }
 
+@media (max-width: 480px) {
+  .preview {
+    grid-template-columns: 1fr;
+  }
+
+  .preview-sheet {
+    grid-column: 1/1;
+  }
+}
+
 .preview-header {
   background-color: steelblue;
   color: white;

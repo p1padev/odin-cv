@@ -13,7 +13,7 @@ export const workInputsDefault = {
 export default function WorkInputs({
   formState: [formData, setFormData],
   disabled,
-  setErrorMessage,
+  setIsEditing,
 }) {
   const handleInputChange = (e, fieldId) => {
     setFormData(
@@ -34,11 +34,7 @@ export default function WorkInputs({
       {formData.map((workField) => {
         return (
           <div className="fieldset-container" key={workField.id}>
-            <Fieldset
-              className="form-work_fieldset"
-              disabled={disabled}
-              setErrorMessage={setErrorMessage}
-            >
+            <Fieldset className="form-work_fieldset" disabled={disabled}>
               <label htmlFor={`companyName-` + workField.id}>
                 Company Name
               </label>
@@ -108,6 +104,7 @@ export default function WorkInputs({
       <CreateInputsButton
         boilerplate={workInputsDefault}
         setFormData={setFormData}
+        setIsEditing={setIsEditing}
       ></CreateInputsButton>
     </>
   );

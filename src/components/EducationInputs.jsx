@@ -12,6 +12,7 @@ export const educationInputsDefault = {
 export default function EducationInputs({
   formState: [formData, setFormData],
   disabled,
+  setIsEditing,
 }) {
   const handleInputChange = (e, fieldId) => {
     setFormData(
@@ -92,6 +93,7 @@ export default function EducationInputs({
       <CreateInputsButton
         boilerplate={educationInputsDefault}
         setFormData={setFormData}
+        setIsEditing={setIsEditing}
       ></CreateInputsButton>
     </>
   );

@@ -12,7 +12,7 @@ const inputComponentTable = {
 
 export default function Form({
   title,
-  formState,
+  formState: [state, handler],
   setErrorMessage,
   editingState: [isEditing, setIsEditing],
 }) {
@@ -23,16 +23,20 @@ export default function Form({
     setErrorMessage('');
   };
 
+  const isStateEmpty = Array.isArray(state) && state.length === 0;
+
   return (
     <form className="form" onSubmit={onSubmitFormHandler}>
       <FormControls
         isEditing={isEditing}
         setIsEditing={setIsEditing}
+        emptyState={isStateEmpty}
       ></FormControls>
       {InputComponent !== null && (
         <InputComponent
-          formState={formState}
+          formState={[state, handler]}
           disabled={!isEditing}
+          setIsEditing={setIsEditing}
         ></InputComponent>
       )}
     </form>
