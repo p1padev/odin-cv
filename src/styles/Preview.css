@@ -2,6 +2,7 @@
   background-color: rgb(240, 240, 240);
   display: grid;
   grid-template-columns: 25px 1fr 25px;
+  overflow: auto;
 }
 
 .preview-sheet {
@@ -54,4 +55,48 @@
   font-weight: 500;
   text-decoration: underline;
   text-underline-offset: 3px;
+}
+
+.preview-container {
+  margin: 1rem;
+  padding: 0.5rem;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.preview-title {
+  margin: 0 0 25px;
+}
+
+.preview-field {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+}
+
+.preview-education_course,
+.preview-education_school,
+.preview-education_year {
+  margin: 0;
+}
+
+.preview-education_course {
+  font-size: 1.1rem;
+}
+
+.preview-education_school {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.preview-education_date {
+  font-size: 0.7rem;
+  margin: 0;
+}
+
+.preview-education_year {
+  font-style: italic;
+  font-size: 1rem;
+  vertical-align: middle;
 }

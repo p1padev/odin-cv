@@ -42,19 +42,6 @@ export default function EducationInputs({
               disabled={disabled}
               setErrorMessage={setErrorMessage}
             >
-              <label htmlFor={`schoolName-` + educationField.id}>
-                School Name
-              </label>
-              <input
-                value={educationField.schoolName}
-                id={`schoolName-` + educationField.id}
-                name="schoolName"
-                placeholder="UFSC"
-                required
-                type="text"
-                min="0"
-                onChange={(e) => handleInputChange(e, educationField.id)}
-              ></input>
               <label htmlFor={`courseTitle-` + educationField.id}>
                 Course Title
               </label>
@@ -63,6 +50,19 @@ export default function EducationInputs({
                 id={`courseTitle-` + educationField.id}
                 name="courseTitle"
                 placeholder="B. Computer Science"
+                required
+                type="text"
+                min="0"
+                onChange={(e) => handleInputChange(e, educationField.id)}
+              ></input>
+              <label htmlFor={`schoolName-` + educationField.id}>
+                School Name
+              </label>
+              <input
+                value={educationField.schoolName}
+                id={`schoolName-` + educationField.id}
+                name="schoolName"
+                placeholder="UFSC"
                 required
                 type="text"
                 min="0"

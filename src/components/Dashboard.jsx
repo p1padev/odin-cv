@@ -46,8 +46,8 @@ export default function Dashboard() {
       ) : (
         <Preview
           personalInfo={personalInfo}
-          workInfo={workInfo}
           educationInfo={educationInfo}
+          workInfo={workInfo}
         ></Preview>
       )}
     </div>
